@@ -24,7 +24,7 @@ For the associated firmwware that you can run on this device, please see [this r
 ## Producing
 The folder [Output_files](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/TwomesSensor/Output_Files/FABRICATION) contains the necessary files to manufacture the PCBs. The files have been exported through the requirements of [JLCPCB](https://www.jlcpcb.com).
 
-The folder [Twomes P1 Gateway Enclosures](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/Twomes%20P1%20Gateway%20Enclosures) contains both, Fusion360 source files, and exported STL files for the Twomes P1 enclosures. The STL files can be imported into any slicer and turned into G-Code for a 3D printer.
+The folder [Twomes Sensor Module Enclosures](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/Twomes%20Sensor%20Module%20Enclosures) contains both, Fusion360 source files, and exported STL files for the Twomes P1 enclosures. The STL files can be imported into any slicer and turned into G-Code for a 3D printer.
 
 ### Printed Ciruit Board
 The fabrication output files can be ordered from JLCPCB, upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote)
