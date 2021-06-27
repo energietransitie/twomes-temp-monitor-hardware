@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name TwomesSensor_KiCad)(type KiCad)(uri ${KIPRJMOD}/TwomesSensor_KiCad.pretty)(options "")(descr ""))
+)
