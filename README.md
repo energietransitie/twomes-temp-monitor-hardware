@@ -30,7 +30,7 @@ The folder [Twomes Sensor Module Enclosures](https://github.com/energietransitie
 The fabrication output files can be ordered from JLCPCB, upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote)
 Select the amount of PCBs and a colour for silkscreen. All other options can be left on default.
 
-if SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. These can be found [here](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/TwomesSensor/Output_files/FABRICATION/BOM_AND_POS) Use the files "BOM_TwomesSensorJLCPCB.csv" and "TwomesSensor-top-pos.csv"
+if SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. These can be found [here](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/TwomesSensor/Output_Files/FABRICATION/BOM_AND_POS) Use the files "BOM_TwomesSensorJLCPCB.csv" and "TwomesSensor-top-pos.csv"
 
 
 ### Enclosure
