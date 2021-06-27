@@ -1,7 +1,0 @@
-Ref,Val,Package,PosX,PosY,Rot,Side
-"C6","1uF","C_0603_1608Metric",98.400000,-101.600000,90.000000,bottom
-"C7","1uF","C_0603_1608Metric",60.200000,-101.400000,90.000000,bottom
-"C8","100nF","C_0603_1608Metric",101.200000,-101.600000,90.000000,bottom
-"C9","100nF","C_0603_1608Metric",63.200000,-101.400000,90.000000,bottom
-"J4","Molex PicoFlex 90814","Molex_Picoflex_90814-0004_2x02_P1.27mm_Vertical",92.000000,-102.800000,0.000000,bottom
-"J5","Molex PicoFlex 90814","Molex_Picoflex_90814-0004_2x02_P1.27mm_Vertical",54.000000,-102.800000,0.000000,bottom
