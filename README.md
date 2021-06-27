@@ -22,7 +22,7 @@ This repository will contain the hardware designs, such as schematics and board 
 For the associated firmwware that you can run on this device, please see [this repository](https://github.com/energietransitie/twomes-temp-monitor).
 
 ## Producing
-The folder [Output_files](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/TwomesSensor/Output_files/FABRICATION) contains the necessary files to manufacture the PCBs. The files have been exported through the requirements of [JLCPCB](https://www.jlcpcb.com).
+The folder [Output_files](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/TwomesSensor/Output_Files/FABRICATION) contains the necessary files to manufacture the PCBs. The files have been exported through the requirements of [JLCPCB](https://www.jlcpcb.com).
 
 The folder [Twomes P1 Gateway Enclosures](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/Twomes%20P1%20Gateway%20Enclosures) contains both, Fusion360 source files, and exported STL files for the Twomes P1 enclosures. The STL files can be imported into any slicer and turned into G-Code for a 3D printer.
 
