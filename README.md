@@ -1,14 +1,14 @@
-# Twomes hardware repository template
+# Twomes P1 Gateway Hardware
 
-This repository contains the open hardware design files for the Twomes something device, which can be used as a [WeMos D1 Mini shield](https://www.wemos.cc/en/latest/d1_mini_shield/index.html), on top of a WeMos D1 Mini board, such as the [LilyGO TTGO T7 Mini32 V1.3 ESP32](https://github.com/LilyGO/ESP32-MINI-32-V1.3), which is based on an ESP32 SoC, or the [Wemos LOLIN D1 mini](https://www.wemos.cc/en/latest/d1/d1_mini.html), which is based on an ESP8266 SoC. 
+This repository contains the open hardware design files for the Twomes temperature monitor device, this is a dedicated device, using an Espressif ESP32, which can contain multiple sensors: A set of two DS18B20Z sensors to measure the temperature of the water returning and being sent to and from the boiler in a house. Or with a Si7051 Temperature sensor and optional SCD41 CO2 sensor to measure room temperature and CO2 ppm.
 
-Describe the function of the shiels.
+The sensor is battery powered by a Lithium Thionyl battery in AA form factor. And has a supercapacitor to assist the battery in high-current bursts.
+The sensor can wirelessly send data to the Twomes P1 Gateway device using ESP-Now.
 
-<img src="./Hardware/front.jpg" width="400" height="400" /> <img src="./Hardware/back.jpg" width="400" height="400" />
+<img src="./images/front.jpg" height="600" /> <img src="./images/back.jpg" height="600" />
 
 ## Table of contents
 * [General info](#general-info)
-* [Prerequisites](#prerequisites)
 * [Producing](#producing)
 * [Developing](#developing) 
 * [Features](#features)
@@ -17,80 +17,55 @@ Describe the function of the shiels.
 * [Credits](#credits)
 
 ## General info
-This repository will contain the hardware designs, such as schematics and board layout files for the Twomes something shield.
+This repository will contain the hardware designs, such as schematics and board layout files for the Twomes temperature sensor device.
 
-For the associated firmwware that you can run on this device, please see [this repository](https://github.com/energietransitie/twomes-opentherm-gateway-diyless).
-
-## Prerequisites
-Describe which hardware and software you need to produce and/or develop the hardawre. If the prerequisites are different for users that only wish to produce hardware versus uers that (also) wish to develop new versions of the hardware, you may want to move the prerequisites section as a subsection of each of those sections.
+For the associated firmwware that you can run on this device, please see [this repository](https://github.com/energietransitie/twomes-temp-monitor).
 
 ## Producing
+The folder [Output_files](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/TwomesSensor/Output_files/FABRICATION) contains the necessary files to manufacture the PCBs. The files have been exported through the requirements of [JLCPCB](https://www.jlcpcb.com).
 
-Describe how the reader use the files contained in this repository to produce the PCB hardware and enclusure(s). 
+The folder [Twomes P1 Gateway Enclosures](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/Twomes%20P1%20Gateway%20Enclosures) contains both, Fusion360 source files, and exported STL files for the Twomes P1 enclosures. The STL files can be imported into any slicer and turned into G-Code for a 3D printer.
 
 ### Printed Ciruit Board
-Document how to order (small) series of PCBs from a PCB fabrication service, including SMT assembly if the design calls for it. Use steps if the procedure is non-trivial:
-1. first step;
-2. second step;
-3. final step.
+The fabrication output files can be ordered from JLCPCB, upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote)
+Select the amount of PCBs and a colour for silkscreen. All other options can be left on default.
 
-Format any scripts or commands in a way that makes them  easy to copy, like the following example. 
+if SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. These can be found [here](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/TwomesSensor/Output_files/FABRICATION/BOM_AND_POS) Use the files "BOM_TwomesSensorJLCPCB.csv" and "TwomesSensor-top-pos.csv"
 
-Forgotten your Wi-Fi password? No problem with the follwing command, replacing `SSID` with the Wi-Fi name of your own Wi-Fi network: 
-```shell
-netsh wlan show profile SSID key=clear
-```
+
 ### Enclosure
-Document how to print (small) series of enclosures, e.g. on a 3D printer, and/or how to order enclusures, e.g. from a 3D printing service. Use steps if the procedure is non-trivial:
-1. first step;
-2. second step;
-3. final step.
-
-Format any scripts or commands in a way that makes them  easy to copy, like the following example. 
-
-Forgotten your Wi-Fi password? No problem with the follwing command, replacing `SSID` with the Wi-Fi name of your own Wi-Fi network: 
-```shell
-netsh wlan show profile SSID key=clear
-```
+The enclosures can be 3D printed. open the STL files with your preferred slicer software and export it with the settings best suited for your printer.
+If the printing is handled by an external source, send the STL files to their service.
 
 ## Developing
-Describe how the reader can change or extend the harware design. 
+### Developing the PCBs
+The PCB files are designed using KiCad, which can be downloaded [here](https://www.kicad.org/download/) for free.
+Alternatively the files can sometimes be imported/converted to different EDA tools.
+
+To export the modified PCBs. Consult the webpage of the PCB manufacturer for a guide on how their service prefers the output files.
+JLCPCB has a guide on how to export Gerbers [here](https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad) and on how to export the BOM and POS files [here](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad)
 
 ## Features
-List of features ready and TODOs for future development. Ready:
-* awesome feature 1;
-* awesome feature 2;
-* awesome feature 3.
-
-To-do:
-* wow improvement to be done 1;
-* wow improvement to be done 2.
+The Twomes P1 Gateway contains an ESP32 Microcontroller, an FTDI compatible serial programming header, a USB input for a power supply, and a RJ12 port to connect to the P1 port of a smart meter.
 
 ## Status
-Project is: _in progress_
+Project is: _Ready for testing_
 
 ## License
 The hardware designs in this repository are available under the [CERN-OHL-P v2 license](./LICENSE.md), Copyright 2021 [Research group Energy Transition, Windesheim University of Applied Sciences](https://windesheim.nl/energietransitie)
 
 ## Credits
 This open hardware design is a collaborative effort of:
-* <contributor name 1> · [@Github_handle_1](https://github.com/<github_handle_1>) · Twitter [@Twitter_handle_1](https://twitter.com/<twitter_handle_1>)
-* <contributor name 2> · [@Github_handle_2](https://github.com/<github_handle_2>) · Twitter [@Twitter_handle_2](https://twitter.com/<twitter_handle_2>)
-* <contributor name 3> · [@Github_handle_3](https://github.com/<github_handle_3>) · Twitter [@Twitter_handle_3](https://twitter.com/<twitter_handle_3>)
-* etc. 
+* Sjors Smit · [@Shorts1999](https://github.com/Shorts1999)
 
 Thanks also go to:
-* <thanks name 1> · [@Github_handle_1](https://github.com/<github_handle_1>) · Twitter [@Twitter_handle_1](https://twitter.com/<twitter_handle_1>)
-* <thanks name 2> · [@Github_handle_2](https://github.com/<github_handle_2>) · Twitter [@Twitter_handle_2](https://twitter.com/<twitter_handle_2>)
-* <thanks name 3> · [@Github_handle_3](https://github.com/<github_handle_3>) · Twitter [@Twitter_handle_3](https://twitter.com/<twitter_handle_3>)
-* etc. 
+* Fredrik-Otto Lautenbag ·  [@Fredrik1997](https://github.com/Fredrik1997)
+* Gerwin Buma ·  [@GerwinBuma](https://github.com/GerwinBuma) 
+* Marco Winkelman · [@MarcoW71](https://github.com/MarcoW71)
 
 Product owner:
 * Marco Winkelman · [@MarcoW71](https://github.com/MarcoW71)
 
 We use and gratefully aknowlegde the efforts of the makers of the following designs:
+* [KiCad](https://www.kicad.org), licensed under [GNU GPL v3](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
-* [library name 1 and version](library 1 URL), by <copyright holder name 1>, licensed under [license 1 name](license1 URL)
-* [library name 2 and version](library 2 URL), by <copyright holder name 2>, licensed under [license 2 name](license2 URL)
-* [library name 3 and version](library 3 URL), by <copyright holder name 3>, licensed under [license 3 name](license3 URL)
-* etc. 
