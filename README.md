@@ -5,7 +5,7 @@ This repository contains the open hardware design files for the Twomes temperatu
 The sensor is battery powered by a Lithium Thionyl battery in AA form factor. And has a supercapacitor to assist the battery in high-current bursts.
 The sensor can wirelessly send data to the Twomes P1 Gateway device using ESP-Now.
 
-<img src="./images/front.jpg" height="600" /> <img src="./images/back.jpg" height="600" />
+<img src="./images/Front.jpg" height="600" /> <img src="./images/Back.jpg" height="600" />
 
 ## Table of contents
 * [General info](#general-info)
