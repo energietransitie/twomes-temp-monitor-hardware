@@ -19,9 +19,11 @@ The sensor can wirelessly send data to the [Twomes P1 Gateway measurement device
 * [Credits](#credits)
 
 ## General info
-This repository contains the hardware designs, such as schematics and board layout files for the Twomes Temperature Monitor device.
+This repository contains the common hardware designs, such as schematics and board layout files for both the Twomes Living Room Monitor and Twomes Boiler Monitor devices.
 
-For the associated firmwware that you can run on this device, please see the [twomes-temp-monitor](https://github.com/energietransitie/twomes-temp-monitor) repository.
+For the associated firmwware that you can run on this device, please see the following repositories:
+* [twomes-twomes-room-monitor-firmware](https://github.com/energietransitie/twomes-room-monitor-firmware);
+* [twomes-twomes-boiler-monitor-firmware](https://github.com/energietransitie/twomes-boiler-monitor-firmware);
 
 ## Producing
 The folder [Output_files](https://github.com/energietransitie/twomes-temp-monitor-hardware/tree/main/TwomesSensor/Output_Files/FABRICATION) contains the necessary files to manufacture the PCBs. The files have been exported through the requirements of [JLCPCB](https://www.jlcpcb.com).
