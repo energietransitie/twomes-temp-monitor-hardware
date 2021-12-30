@@ -53,11 +53,11 @@ Some EDA tools may be able to convert the files, however this is not supported a
 To export the modified PCBs, consult the webpage of your PCB manufacturer of choice for guidance on how to produce the output files. For example,  see the [JLCPCB guide on how to export Gerbers](https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad) and the  [JLCPCB guide how to export the BOM and POS files](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad)
 
 ## Features
-The Twomes Temperature Mnitor device features the follwoing main hardware components:
+The Twomes Temperature Monitor device features the follwoing main hardware components:
 * ESP32-WROOM-32D module;
 * supercapacitor to assist the battery in high-current bursts.
 * battery holder for a 3.6 V AA-size battery, such as the SAFT LS14500 Lithium Thionyl battery.
-* FTDI compatible serial programming header (3,3 V).
+* FTDI compatible serial programming header (3.3 V).
 
 ## Status
 Project is: _Ready for testing_
