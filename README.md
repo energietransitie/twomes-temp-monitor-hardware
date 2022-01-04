@@ -21,7 +21,7 @@ The Twomes Temperature Monitor hardware can wirelessly send data to the [Twomes 
 * [Credits](#credits)
 
 ## General info
-This repository contains the common hardware designs, such as schematics and board layout files for both the Twomes Room Monitor and Twomes Boiler Monitor hardware.
+This repository contains the common hardware designs, such as [schematics](./pcb/Output_Files/SCH/TwomesSensor.pdf) and board layout files for both the Twomes Room Monitor and Twomes Boiler Monitor hardware.
 
 For the associated firmwware that you can run on this hardware, please see the following repositories:
 * [twomes-twomes-room-monitor-firmware](https://github.com/energietransitie/twomes-room-monitor-firmware);
@@ -29,9 +29,9 @@ For the associated firmwware that you can run on this hardware, please see the f
 
 ## Producing
 ### Printed Circuit Board
-To manufacture the printed circuit board you can use various PCB services. The folder [Output_Files](./pcb/Output_Files/FABRICATION/) contains the necessary files. 
+To manufacture the printed circuit board you can use various PCB services. 
 
-To have the PCBs manufactures via [JLCPCB](https://www.jlcpcb.com), the PCB manufacturer we used, upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. 
+To have the PCBs manufactured via [JLCPCB](https://www.jlcpcb.com), the PCB manufacturer we used, you can re-use the files in the folder [Output_files](./pcb/Output_files/FABRICATION). Upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. 
 
 There are two variants:
 * for Twomes Boiler Monitor hardware, use the files [BOM_SENSOR_JLC.xlsx](./pcb/Output_Files/FABRICATION/BOM_AND_POS/BOM_SENSOR_JLC.xlsx) and [TwomesSensor-top-pos.csv](./pcb/Output_Files/FABRICATION/BOM_AND_POS/TwomesSensor-top-pos.csv);
