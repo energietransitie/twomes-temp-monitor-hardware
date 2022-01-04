@@ -9,7 +9,7 @@ on the main PCB itself to measure room temperature;
 
 The Twomes Temperature Monitor hardware can wirelessly send data to the [Twomes P1 Gateway measurement device](https://github.com/energietransitie/twomes-p1-gateway-firmware) using [ESP-NOW](https://www.espressif.com/en/products/software/esp-now/overview).
 
-<img src="./images/Front.jpg" height="600" /> <img src="./images/Back.jpg" height="600" />
+<img src="./images/pcb.jpg" height="600" />
 
 ## Table of contents
 * [General info](#general-info)
