@@ -1,4 +1,4 @@
-Comment,Designator,Footprint,LCSC
+﻿Comment,Designator,Footprint,LCSC
 LS14500,"BT1,BT2",Battery:BatteryHolder_Keystone_2460_1xAA,DO NOT PLACE
 1uF,"C1,C6,C7",Capacitor_SMD:C_0603_1608Metric,C15849
 0.47F,C2,SuperCap,DO NOT PLACE
@@ -18,6 +18,6 @@ SolderJumper,JP1,Resistor_SMD:R_0201_0603Metric,DO NOT PLACE
 4k7,R8,Resistor_SMD:R_0603_1608Metric,C23162
 SW_Push,"SW1,SW2,SW3",Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm,C83206
 ESP32-WROOM-32E,U1,RF_Module:ESP32-WROOM-32,C701343
-Si7051-A20,U2,Package_DFN_QFN:DFN-6-1EP_3x3mm_P0.95mm_EP1.7x2.6mm,DO NOT PLACE
-DS18B20Z,"U3,U4",Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,C97190
+Si7051-A20,U2,Package_DFN_QFN:DFN-6-1EP_3x3mm_P0.95mm_EP1.7x2.6mm,C129804
+DS18B20Z,"U3,U4",Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,DO NOT PLACE
 WeMos_D1_mini_breakout,U5,Module:WEMOS_D1_mini_light_shield-Breakout,DO NOT PLACE
