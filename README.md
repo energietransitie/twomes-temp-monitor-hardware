@@ -5,7 +5,7 @@ This repository contains the open hardware design files for the battery powered 
 * an [Si7051](https://www.silabs.com/sensors/temperature/si705x/device.si7051) sensor mounted 
 on the main PCB itself to measure room temperature;
 * a [Twomes CO₂ meter shield](https://github.com/energietransitie/twomes-co2-meter-hardware) with the [WeMos D1 Mini shield](https://www.wemos.cc/en/latest/d1_mini_shield/index.html) form factor that measures temperature via an [Si7051](https://www.silabs.com/sensors/temperature/si705x/device.si7051) sensor and a Sensirion [SCD41](https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensor-scd4x/) sensor that measures CO₂ concentration, relative humidity and temperatue;
-* a [SEK-SCD41](https://www.sensirion.com/en/environmental-sensors/evaluation-kit-sek-environmental-sensing/evaluation-kit-sek-scd41/) evaluation board that that measures CO₂ concentration, relative humidity and temperature;
+* a [SEK-SCD41](https://www.sensirion.com/en/environmental-sensors/evaluation-kit-sek-environmental-sensing/evaluation-kit-sek-scd41/) evaluation board that that measures CO₂ concentration, relative humidity and temperature.
 
 The Twomes Temperature Monitor hardware can wirelessly send data to the [Twomes P1 Gateway measurement device](https://github.com/energietransitie/twomes-p1-gateway-firmware) using [ESP-NOW](https://www.espressif.com/en/products/software/esp-now/overview).
 
@@ -33,11 +33,13 @@ For the associated firmwware that you can run on this hardware, please see the f
 To fabricate the printed circuit board you can use various PCB services. 
 
 The folder [pcb/jlcpcb](./pcb/jlcpcb) includes all exported files needed to have the PCBs manufactured by [JLCPCB](https://www.jlcpcb.com). 
-Upload the [zipped gerber files](./pcb\jlcpcb\gerber\gerber-TwomesSensor.zip) to the [JLCPCB quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for the silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. 
+Upload the [zipped gerber files](./pcb\jlcpcb\gerber\gerber-TwomesSensor.zip) to the [JLCPCB quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for the silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded.  
 
 Assembly of components depends on the variant you need:
 * for assembly of a Twomes Boiler Monitor PCB, use the files [BOM-TwomesBoilerSensor.csv](./pcb/jlcpcb/assembly/boiler-monitor/BOM-TwomesBoilerSensor.csv) and [CPL-TwomesBoilerSensor.csv](./pcb/jlcpcb/assembly/boiler-monitor/CPL-TwomesBoilerSensor.csv);
 * for assembly of a Twomes Room Monitor PCB, use the files [BOM-TwomesRoomSensor.csv](./pcb/jlcpcb/assembly/room-monitor/BOM-TwomesRoomSensor.csv) and [CPL-TwomesRoomSensor.csv](./pcb/jlcpcb/assembly/room-monitor/CPL-TwomesRoomSensor.csv)
+
+N.B. All components marked "DO NOT PLACE" in the BOM-*.csv files can not be ordered from JLCPCB and need to be ordered from other services and placed manually.
 
 ### Enclosure
 To fabricate the boiler monitor enclosure or the room room monitor enclosure you can use your own 3D printer or use a 3D printing service. 
@@ -77,6 +79,10 @@ The Twomes Temperature Monitor device features the follwoing main hardware compo
 * battery holder for a 3.6 V AA-size battery, such as the SAFT LS14500 Lithium Thionyl battery.
 * FTDI compatible serial programming header (3.3 V).
 
+To-do:
+* remove SW2 (not used in newer firmware)
+* remove holes above SW2 and SW3 in enclosure lids (SW3 not used in newer firmware; SW2 does not need to be user accessible, only used during deployment))  
+* remove letters 'R' and 'K' from enclusure lids (only a single end-user accessible button used in newer firmware )
 ## Status
 Project is: _in progress_
 
