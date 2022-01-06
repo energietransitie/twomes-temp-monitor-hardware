@@ -21,7 +21,8 @@ The Twomes Temperature Monitor hardware can wirelessly send data to the [Twomes 
 * [Credits](#credits)
 
 ## General info
-This repository contains the common hardware designs, such as [schematics](./pcb/Output_Files/SCH/TwomesSensor.pdf) and board layout files for both the Twomes Room Monitor and Twomes Boiler Monitor hardware.
+This repository contains the the source files and fabrication files of the hardware designs of theTwomes Room Monitor and Twomes Boiler Monitor pcb and its enclosure. It also includes a `docs` folder with recent printouts of the [schematics](./docs/twomes-temp-monitor-hardware-sch.pdf) and [PCB layout](./docs/twomes-temp-monitor-hardware-pcb.pdf). 
+
 
 For the associated firmwware that you can run on this hardware, please see the following repositories:
 * [twomes-twomes-room-monitor-firmware](https://github.com/energietransitie/twomes-room-monitor-firmware);
@@ -29,29 +30,46 @@ For the associated firmwware that you can run on this hardware, please see the f
 
 ## Producing
 ### Printed Circuit Board
-To manufacture the printed circuit board you can use various PCB services. 
+To fabricate the printed circuit board you can use various PCB services. 
 
-To have the PCBs manufactured via [JLCPCB](https://www.jlcpcb.com), the PCB manufacturer we used, you can re-use the files in the folder [Output_files](./pcb/Output_files/FABRICATION). Upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. 
+The folder [pcb/jlcpcb](./pcb/jlcpcb) includes all exported files needed to have the PCBs manufactured by [JLCPCB](https://www.jlcpcb.com). 
+Upload the [zipped gerber files](./pcb\jlcpcb\gerber\gerber-TwomesSensor.zip) to the [JLCPCB quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for the silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. 
 
-There are two variants:
-* for Twomes Boiler Monitor hardware, use the files [BOM_SENSOR_JLC.xlsx](./pcb/Output_Files/FABRICATION/BOM_AND_POS/BOM_SENSOR_JLC.xlsx) and [TwomesSensor-top-pos.csv](./pcb/Output_Files/FABRICATION/BOM_AND_POS/TwomesSensor-top-pos.csv);
-* for Twomes Room Monitor hardware, use the files [BOM_SENSOR_JLC.xlsx](./pcb/Output_Files/FABRICATION/BOM_AND_POS/BOM_SENSOR_JLC.xlsx) and [TwomesSensor.csv](./pcb/Output_Files/FABRICATION/BOM_AND_POS/TwomesSensor.csv)
+Assembly of components depends on the variant you need:
+* for assembly of a Twomes Boiler Monitor PCB, use the files [BOM-TwomesBoilerSensor.csv](./pcb/jlcpcb/assembly/boiler-monitor/BOM-TwomesBoilerSensor.csv) and [CPL-TwomesBoilerSensor.csv](./pcb/jlcpcb/assembly/boiler-monitor/CPL-TwomesBoilerSensor.csv);
+* for assembly of a Twomes Room Monitor PCB, use the files [BOM-TwomesRoomSensor.csv](./pcb/jlcpcb/assembly/room-monitor/BOM-TwomesRoomSensor.csv) and [CPL-TwomesRoomSensor.csv](./pcb/jlcpcb/assembly/room-monitor/CPL-TwomesRoomSensor.csv)
 
 ### Enclosure
-There are two types of enclusure:
-* for a Twomes Boiler Monitor enclosure and sensor clamps, use the files in the folder [enclosure/boiler-monitor](./enclosure/boiler-monitor); 
-* for a Twomes Room Monitor enclosure, use the files in the folder [enclosure/room-monitor](./enclosure/room-monitor).
+To fabricate the boiler monitor enclosure or the room room monitor enclosure you can use your own 3D printer or use a 3D printing service. 
 
-Both folders contain Fusion360 source files and exported STL files for the enclosures. The STL files can be imported into any slicer and turned into G-Code for a 3D printer. You can also upload  the STL files to an online 3D printing service of your choice.
+Below you find a photo of the boiler enclosure. 
+<img src="./images/enclosure.jpg" height="600" />
+
+The folder [enclosure/fabrication](./enclosure/fabrication) contains exported STL files. You can print two types of enclusure:
+* all enclusures share the same [case](./enclosure/fabrication/twomes-temp-monitor-enclosure-case.stl) and one [button](./enclosure/fabrication/twomes-temp-monitor-enclosure-button.stl)
+* for a Twomes Boiler Monitor you need a [boiler monitor lid](./enclosure/fabrication/twomes-boiler-monitor-enclosure-lid.stl) and two [sensor clamps](./enclosure/fabrication/twomes-boiler-monitor-enclosure-clamp.stl); 
+* for a Twomes Room Monitor you need a [room monitor lid](./enclosure/fabrication/twomes-room-monitor-enclosure-lid.stl).
+
+The STL files can be imported into any slicer and turned into G-Code for a 3D printer. You can also upload the STL files to an online 3D printing service of your choice.
+
+
 
 ## Developing
-To change the hardware designs, you need:
-* [KiCad](https://www.kicad.org/download/) installed to change the PCB design. 
 
-Some EDA tools may be able to convert the files, however this is not supported and may result in errors.
+### Printed Circuit Board
+To change the hardware design of the PCB, you need:
+* [KiCad](https://www.kicad.org/download/) installed to change te PCB design. 
 
-To export the modified PCBs, consult the webpage of your PCB manufacturer of choice for guidance on how to produce the output files. For example,  see the [JLCPCB guide on how to export Gerbers](https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad) and the  [JLCPCB guide how to export the BOM and POS files](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad)
+The KiCad source files of the PCB can be found in the folder [pcb](./pcb).
 
+To convert the PCBs into a format suitable for fabrication, consult the webpage of your PCB manufacturer of choice. For example, see the [JLCPCB guide on how to export Gerbers](https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad) and the  [JLCPCB guide how to export the BOM and POS files](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad). You may also use a KiCad plug-in for this purpose such as [kicad-jlcpcb-tools](https://github.com/Bouni/kicad-jlcpcb-tools).
+
+### Enclosure
+To change the hardware design of the enclosure, you need either:
+* [Autodesk Fusion 360](https://www.kicad.org/download/) installed (Autodesk provides 30 day free trials and [free one-year educational access](https://www.autodesk.com/education/edu-software/overview?sorting=featured&filters=individual) to its products and services for eligible students, teachers and research staff); 
+* or [FreeCAD](https://www.freecadweb.org/), an open source alternative.
+
+The source files of the enclosure can be found in the folder [enclosure](./enclosure). We include both .f3d source files and .step source files we obtained after conversion.
 ## Features
 The Twomes Temperature Monitor device features the follwoing main hardware components:
 * ESP32-WROOM-32D module;
@@ -60,10 +78,10 @@ The Twomes Temperature Monitor device features the follwoing main hardware compo
 * FTDI compatible serial programming header (3.3 V).
 
 ## Status
-Project is: _Ready for testing_
+Project is: _in progress_
 
 ## License
-The hardware designs in this repository are available under the [CERN-OHL-P v2 license](./LICENSE), Copyright 2021 [Research group Energy Transition, Windesheim University of Applied Sciences](https://windesheim.nl/energietransitie)
+The hardware designs in this repository are available under the [CERN-OHL-P v2 license](./LICENSE), Copyright 2022 [Research group Energy Transition, Windesheim University of Applied Sciences](https://windesheim.nl/energietransitie)
 
 ## Credits
 This open hardware design is made by:
