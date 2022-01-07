@@ -4,7 +4,7 @@ This repository contains the open hardware design files for the battery powered 
 * two [DS18b20(Z)](https://www.maximintegrated.com/en/products/sensors/DS18B20.html) temperature sensors in clamps that can be connected the supply water pipe (from the boiler to the hydronic radiators) and return water pipe (from the hydronic radiators to the boiler);
 * an [Si7051](https://www.silabs.com/sensors/temperature/si705x/device.si7051) sensor mounted 
 on the main PCB itself to measure room temperature;
-* a [Twomes CO₂ meter shield](https://github.com/energietransitie/twomes-co2-meter-hardware) with the [WeMos D1 Mini shield](https://www.wemos.cc/en/latest/d1_mini_shield/index.html) form factor that measures temperature via an [Si7051](https://www.silabs.com/sensors/temperature/si705x/device.si7051) sensor and a Sensirion [SCD41](https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensor-scd4x/) sensor that measures CO₂ concentration, relative humidity and temperatue;
+* a [Twomes CO₂ Monitor Shield](https://github.com/energietransitie/twomes-co2-onitor-hardware) with the [WeMos D1 Mini shield](https://www.wemos.cc/en/latest/d1_mini_shield/index.html) form factor that measures temperature via an [Si7051](https://www.silabs.com/sensors/temperature/si705x/device.si7051) sensor and a Sensirion [SCD41](https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensor-scd4x/) sensor that measures CO₂ concentration, relative humidity and temperatue;
 * a [SEK-SCD41](https://www.sensirion.com/en/environmental-sensors/evaluation-kit-sek-environmental-sensing/evaluation-kit-sek-scd41/) evaluation board that that measures CO₂ concentration, relative humidity and temperature.
 
 The Twomes Temperature Monitor hardware can wirelessly send data to the [Twomes P1 Gateway measurement device](https://github.com/energietransitie/twomes-p1-gateway-firmware) using [ESP-NOW](https://www.espressif.com/en/products/software/esp-now/overview).
@@ -80,7 +80,7 @@ The Twomes Temperature Monitor device features the follwoing main hardware compo
 * FTDI compatible serial programming header (3.3 V).
 
 To-do:
-* remove SW2 (not used in newer firmware)
+* remove `SW2` (not used in newer firmware)
 * remove holes above SW2 and SW3 in enclosure lids (SW3 not used in newer firmware; SW2 does not need to be user accessible, only used during deployment))  
 * remove letters 'R' and 'K' from enclusure lids (only a single end-user accessible button used in newer firmware )
 ## Status
